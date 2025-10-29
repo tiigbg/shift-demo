@@ -336,9 +336,15 @@
 .menu-button {
   background: none;
   border: none;
-  font-size: 24px;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 4px;
   color: #1d1b20;
 }
 
