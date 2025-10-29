@@ -2,6 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Start from './pages/Start';
 import PlaceholderPage from './pages/PlaceholderPage';
 
+// Intro Screens
+import ReportIntro from './pages/intro/ReportIntro';
+import PortalIntro from './pages/intro/PortalIntro';
+import DashboardIntro from './pages/intro/DashboardIntro';
+import NotificationIntro from './pages/intro/NotificationIntro';
+import SocialIntro from './pages/intro/SocialIntro';
+
 // Report Flow
 import ReportStart from './pages/report/ReportStart';
 import Sending from './pages/report/Sending';
@@ -30,6 +37,13 @@ function App() {
       <Routes>
         {/* Home */}
         <Route path="/" element={<Start />} />
+
+        {/* Intro Screens */}
+        <Route path="/report-intro" element={<ReportIntro />} />
+        <Route path="/portal-intro" element={<PortalIntro />} />
+        <Route path="/dashboard-intro" element={<DashboardIntro />} />
+        <Route path="/notification-intro" element={<NotificationIntro />} />
+        <Route path="/social-intro" element={<SocialIntro />} />
 
         {/* Report Flow */}
         <Route path="/report" element={<ReportStart />} />

@@ -55,9 +55,18 @@
   white-space: pre-wrap;
 }
 
-.button-container {
+/* Button rows for home screen */
+.button-row {
   position: absolute;
   left: 46px;
+  width: 291px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.button-container {
   width: 227px;
   display: flex;
   align-items: center;
@@ -65,24 +74,27 @@
 }
 
 .button-container.report-button {
+  position: relative;
+}
+
+.button-row:nth-child(6) {
   bottom: 287px;
 }
 
-.button-container.portal-button {
+.button-row:nth-child(7) {
   bottom: 221px;
 }
 
-.button-container.dashboard-button {
+.button-row:nth-child(8) {
   bottom: 155px;
 }
 
-.button-container.notification-button {
+.button-row:nth-child(9) {
   bottom: 89px;
 }
 
-.button-container.social-button {
+.button-row:nth-child(10) {
   bottom: 23px;
-  left: 45px;
 }
 
 .nav-button {
@@ -116,7 +128,6 @@
 }
 
 .help-icon-container {
-  position: absolute;
   width: 56px;
   height: 56px;
   background-color: #49454f;
@@ -126,35 +137,12 @@
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.2s;
+  text-decoration: none;
+  border: none;
 }
 
 .help-icon-container:hover {
   background-color: #5a5560;
-}
-
-.help-icon-container.help-1 {
-  left: 279px;
-  top: 324px;
-}
-
-.help-icon-container.help-2 {
-  left: 279px;
-  top: 390px;
-}
-
-.help-icon-container.help-3 {
-  left: 279px;
-  top: 456px;
-}
-
-.help-icon-container.help-4 {
-  left: 279px;
-  top: 522px;
-}
-
-.help-icon-container.help-5 {
-  left: 279px;
-  top: 588px;
 }
 
 .help-icon {
@@ -201,7 +189,102 @@
   background-color: #5a5560;
 }
 
+/* ========================================
+   Intro Screens Styles
+   ======================================== */
+
+/* Intro sections */
+.intro-section {
+  position: absolute;
+  left: 26px;
+  width: 325px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-section-1 {
+  top: 36px;
+}
+
+.intro-section-2 {
+  top: 186px;
+}
+
+.intro-section-3 {
+  top: 336px;
+}
+
+.intro-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #1d1b20;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.intro-text strong {
+  font-weight: 700;
+}
+
+/* Intro back button */
+.intro-back-button {
+  position: absolute;
+  left: 43px;
+  top: 547px;
+  width: 56px;
+  height: 56px;
+  background-color: #49454f;
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 0;
+}
+
+.intro-back-button:hover {
+  background-color: #5a5560;
+}
+
+.intro-back-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Intro continue button */
+.intro-continue-button {
+  position: absolute;
+  left: 105px;
+  bottom: 64px;
+  width: 227px;
+  background-color: #49454f;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.intro-continue-button:hover {
+  background-color: #5a5560;
+}
+
 /* Report Flow Styles */
+.report-start-bg {
+  background-color: white !important;
+}
+
 .report-app-bar {
   position: absolute;
   top: 0;
@@ -211,27 +294,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
+  padding: 0 4px;
   background-color: white;
-  border-bottom: 1px solid #e0e0e0;
 }
 
 .app-bar-title {
   font-family: 'Roboto', sans-serif;
   font-size: 22px;
   font-weight: 400;
+  line-height: 28px;
   color: #1d1b20;
-  flex: 1;
+  position: absolute;
+  left: 56px;
+  right: 56px;
   text-align: center;
 }
 
 .back-button-small {
   background: none;
   border: none;
-  font-size: 24px;
   cursor: pointer;
-  padding: 8px;
-  color: #1d1b20;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 4px;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .menu-button {
@@ -297,6 +392,15 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 54.5px;
+  height: 55px;
+}
+
+.compass-arrow-rotated {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
   width: 54.5px;
   height: 55px;
 }
@@ -394,12 +498,41 @@
   background-color: #5a3f94;
 }
 
+/* Report flow continue button with icon */
+.report-continue-button {
+  position: absolute;
+  bottom: 15px;
+  left: 107px;
+  background-color: #6750a4;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.report-continue-button:hover {
+  background-color: #5a3f94;
+}
+
+.button-arrow-icon {
+  width: 24px;
+  height: 24px;
+}
+
 /* Sending/Loading Screens */
 .sending-logo {
   position: absolute;
-  top: 133px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 129px;
+  left: 119px;
   width: 137px;
   height: 50px;
 }
@@ -407,10 +540,10 @@
 .sending-logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.sending-content {
+.sending-location {
   position: absolute;
   top: 179px;
   left: 10px;
@@ -418,19 +551,84 @@
   text-align: center;
 }
 
-.sending-subtitle {
+.location-direction {
   font-family: 'Roboto', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #49454f;
-  margin-bottom: 8px;
-}
-
-.sending-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 400;
   color: #1d1b20;
+  margin: 0 0 4px 0;
+}
+
+.location-details {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #1d1b20;
+  margin: 0;
+}
+
+.location-coords {
+  color: #79747e;
+}
+
+.sending-loading-container {
+  position: absolute;
+  top: 309px;
+  left: 164px;
+  width: 48px;
+  height: 48px;
+}
+
+.sending-loading-indicator {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-container-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-shape-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 33px;
+  height: 34px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sending-loading-text {
+  position: absolute;
+  top: 380px;
+  left: 10px;
+  width: 355px;
+  text-align: center;
+}
+
+.sending-loading-text p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #1d1b20;
+  margin: 0;
 }
 
 .loading-container {
@@ -464,14 +662,11 @@
   color: #49454f;
 }
 
-.verify-icon-container {
+/* Verify screen styles */
+.verify-shield-icon {
   position: absolute;
   top: 300px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.verify-icon {
+  left: 158px;
   width: 56px;
   height: 56px;
   background-color: #6750a4;
@@ -479,8 +674,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  color: white;
+}
+
+.verify-shield-icon img {
+  width: 24px;
+  height: 24px;
 }
 
 .verify-message {
@@ -488,66 +686,84 @@
   top: 368px;
   left: 8px;
   width: 355px;
-  padding: 0 20px;
   text-align: center;
 }
 
 .verify-message p {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
   color: #1d1b20;
+  margin: 0;
 }
 
 .verify-button {
   position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 18px;
+  left: 72px;
   background-color: #6750a4;
   color: white;
   border: none;
   border-radius: 16px;
-  padding: 16px 32px;
+  padding: 16px 24px;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 500;
+  line-height: 24px;
   cursor: pointer;
   transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .verify-button:hover {
   background-color: #5a3f94;
 }
 
-.bankid-logo {
+.button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* BankId screen styles */
+.bankid-image {
   position: absolute;
   top: 246px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 80px;
   width: 198px;
   height: 151px;
 }
 
-.bankid-logo img {
+.bankid-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.bankid-instructions {
+.bankid-verify-button {
   position: absolute;
-  top: 420px;
-  left: 8px;
-  width: 355px;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.bankid-instructions p {
+  bottom: 14px;
+  left: 71px;
+  background-color: #6750a4;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  font-weight: 500;
   line-height: 24px;
-  color: #1d1b20;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bankid-verify-button:hover {
+  background-color: #5a3f94;
 }
 
 .cancel-button {
@@ -570,56 +786,73 @@
   background-color: #f5f0ff;
 }
 
-.success-icon-container {
+/* Thanks screen styles */
+.thanks-check-icon {
   position: absolute;
   top: 294px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.success-icon {
+  left: 160px;
   width: 56px;
   height: 56px;
-  background-color: #4caf50;
+  background-color: #6750a4;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  color: white;
+}
+
+.thanks-check-icon img {
+  width: 24px;
+  height: 24px;
 }
 
 .thanks-message {
   position: absolute;
   top: 368px;
-  left: 8px;
+  left: 10px;
   width: 355px;
-  padding: 0 20px;
   text-align: center;
 }
 
-.thanks-message p {
+.thanks-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  color: #1d1b20;
+  margin: 0;
+}
+
+.thanks-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #1d1b20;
+  margin: 0;
+}
+
+.thanks-profile-button {
+  position: absolute;
+  bottom: 15px;
+  left: 100px;
+  background-color: #6750a4;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  line-height: 24px;
-  color: #1d1b20;
-  margin-bottom: 12px;
-}
-
-.thanks-submessage {
   font-weight: 500;
-  color: #6750a4;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.thanks-buttons {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  width: 90%;
-  justify-content: center;
+.thanks-profile-button:hover {
+  background-color: #5a3f94;
 }
 
 .primary-button {

@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgBankId = "https://www.figma.com/api/mcp/asset/34618171-eb16-452e-aa2a-d4be9665eb30";
+// Updated Figma assets
+const imgBankId = "https://www.figma.com/api/mcp/asset/3bbd26e0-5789-4cbe-8b4b-bc7760c16175";
+const imgBankIdIconBtn = "https://www.figma.com/api/mcp/asset/aeb41408-bcca-4b88-9c4e-f84335a386e9";
 
 function BankId() {
   const navigate = useNavigate();
@@ -17,32 +19,16 @@ function BankId() {
   }, [navigate]);
 
   return (
-    <div className="app-container bg-white">
-      {/* App Bar */}
-      <div className="report-app-bar">
-        <div className="app-bar-title">BankID</div>
-      </div>
-
-      {/* BankID Logo */}
-      <div className="bankid-logo">
+    <div className="app-container report-start-bg">
+      {/* BankID Logo/Image */}
+      <div className="bankid-image">
         <img src={imgBankId} alt="BankID" />
       </div>
 
-      {/* Instructions */}
-      <div className="bankid-instructions">
-        <p>
-          Öppna BankID-appen på din mobil för att identifiera dig.
-        </p>
-      </div>
-
-      {/* Loading */}
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-        <p className="loading-text">Väntar på BankID...</p>
-      </div>
-
-      <button className="cancel-button" onClick={() => navigate('/report/thanks')}>
-        Avbryt
+      {/* Button */}
+      <button className="bankid-verify-button" onClick={() => navigate('/report/thanks')}>
+        <img src={imgBankIdIconBtn} alt="" className="button-icon" />
+        <span>Verifiera din identitet</span>
       </button>
     </div>
   );

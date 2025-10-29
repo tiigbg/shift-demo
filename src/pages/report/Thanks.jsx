@@ -1,16 +1,23 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgLogo = "https://www.figma.com/api/mcp/asset/5011ef80-e37b-4abb-9cdb-97090c41dd0c";
+// Updated Figma assets
+const imgLogo = "https://www.figma.com/api/mcp/asset/ca3de0f3-8525-44fa-8576-c43226061b9d";
+const imgMenuIcon = "https://www.figma.com/api/mcp/asset/d2c0f8f8-ac31-40a6-8b01-8ad58ae92130";
+const imgCheckIcon = "https://www.figma.com/api/mcp/asset/85e0fb63-6924-4cb2-bf9b-cb3593a3cd7f";
+const imgProfileIcon = "https://www.figma.com/api/mcp/asset/1dc0251b-463c-414e-9795-1b9f22a5bd7c";
 
 function Thanks() {
   const navigate = useNavigate();
 
   return (
-    <div className="app-container bg-white">
+    <div className="app-container report-start-bg">
       {/* App Bar */}
       <div className="report-app-bar">
-        <div className="app-bar-title">Tack!</div>
+        <button className="back-button-small" onClick={() => navigate('/')}>
+          <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
+        </button>
+        <h1 className="app-bar-title">Skapa ny rapport</h1>
       </div>
 
       {/* Logo */}
@@ -18,37 +25,34 @@ function Thanks() {
         <img src={imgLogo} alt="SHIFT" />
       </div>
 
-      {/* Headings */}
-      <div className="sending-content">
-        <h2 className="sending-subtitle">SHIFT</h2>
-        <h1 className="sending-title">Tack för din rapport!</h1>
+      {/* Location info */}
+      <div className="sending-location">
+        <p className="location-direction">N</p>
+        <p className="location-details">
+          10:45 - Göteborg<br />
+          <span className="location-coords">Lat 57,71° N; Lon 11,97° E</span>
+        </p>
       </div>
 
-      {/* Success icon */}
-      <div className="success-icon-container">
-        <div className="success-icon">✓</div>
+      {/* Check/Success icon */}
+      <div className="thanks-check-icon">
+        <img src={imgCheckIcon} alt="" />
       </div>
 
       {/* Message */}
       <div className="thanks-message">
-        <p>
-          Din rapport har skickats in och kommer att behandlas. Du har nu verifierat
-          din identitet och kan följa statusen på din rapport under "Mina rapporter".
-        </p>
-        <p className="thanks-submessage">
-          Vi uppskattar ditt bidrag till samhällets säkerhet.
+        <p className="thanks-title">Tack för ditt bidrag!</p>
+        <p>&nbsp;</p>
+        <p className="thanks-text">
+          Du kan se dina observationer och lägga till mer information i din profil.
         </p>
       </div>
 
-      {/* Buttons */}
-      <div className="thanks-buttons">
-        <button className="secondary-button" onClick={() => navigate('/portal')}>
-          Gå till Mina rapporter
-        </button>
-        <button className="primary-button" onClick={() => navigate('/')}>
-          Tillbaka till start
-        </button>
-      </div>
+      {/* Button */}
+      <button className="thanks-profile-button" onClick={() => navigate('/portal')}>
+        <img src={imgProfileIcon} alt="" className="button-icon" />
+        <span>Gå till min profil</span>
+      </button>
     </div>
   );
 }
