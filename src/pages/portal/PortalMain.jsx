@@ -36,13 +36,10 @@ function PortalMain() {
     <div className="app-container bg-white">
       {/* App Bar */}
       <div className="report-app-bar">
-        <button className="back-button-small" onClick={() => navigate('/')}>
-          ←
-        </button>
-        <h1 className="app-bar-title">Dina rapporter</h1>
-        <button className="menu-button">
+        <button className="menu-button" onClick={() => navigate('/')}>
           <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
         </button>
+        <h1 className="app-bar-title">Dina rapporter</h1>
       </div>
 
       {/* Reports List */}

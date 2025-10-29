@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 const imgMap = "https://www.figma.com/api/mcp/asset/31c85e50-7fa9-4b18-b531-d3fc16566e34";
+const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
 
 function DashboardMap() {
   const navigate = useNavigate();
@@ -15,8 +16,8 @@ function DashboardMap() {
     <div className="app-container bg-white">
       {/* App Bar */}
       <div className="report-app-bar">
-        <button className="back-button-small" onClick={() => navigate('/dashboard')}>
-          ←
+        <button className="menu-button" onClick={() => navigate('/')}>
+          <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
         </button>
         <h1 className="app-bar-title">Situationsöversikt</h1>
       </div>

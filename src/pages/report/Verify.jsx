@@ -18,7 +18,7 @@ function Verify() {
     <div className="app-container report-start-bg">
       {/* App Bar */}
       <div className="report-app-bar">
-        <button className="back-button-small" onClick={() => navigate('/')}>
+        <button className="menu-button" onClick={() => navigate('/')}>
           <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
         </button>
         <h1 className="app-bar-title">Skapa ny rapport</h1>

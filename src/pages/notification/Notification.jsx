@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
+const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
+
 function Notification() {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState('');
@@ -16,11 +18,10 @@ function Notification() {
     <div className="app-container bg-white">
       {/* App Bar */}
       <div className="report-app-bar">
-        <button className="back-button-small" onClick={() => navigate('/')}>
-          ←
+        <button className="menu-button" onClick={() => navigate('/')}>
+          <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
         </button>
         <h1 className="app-bar-title">Mina Tjänster</h1>
-        <div className="avatar-small"></div>
       </div>
 
       {/* Service Card */}

@@ -39,11 +39,11 @@ function Social() {
   return (
     <div className="app-container bg-white">
       {/* App Bar */}
-      <div className="social-app-bar">
-        <button className="social-back-button" onClick={() => navigate('/')}>
-          <img src={imgMenuIcon} alt="Menu" className="social-menu-icon" />
+      <div className="report-app-bar">
+        <button className="menu-button" onClick={() => navigate('/')}>
+          <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
         </button>
-        <h1 className="social-app-bar-title">Pågående Observationer</h1>
+        <h1 className="app-bar-title">Pågående Observationer</h1>
       </div>
 
       {/* Header with logo and location */}

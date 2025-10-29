@@ -26,7 +26,7 @@ function Start() {
       {/* Navigation Buttons with Help Icons */}
       <div className="button-row">
         <div className="button-container report-button">
-          <Link to="/report-intro" className="nav-button">
+          <Link to="/report" className="nav-button">
             <span className="button-text">1. Civil rapportering</span>
           </Link>
         </div>
@@ -37,7 +37,7 @@ function Start() {
 
       <div className="button-row">
         <div className="button-container portal-button">
-          <Link to="/portal-intro" className="nav-button">
+          <Link to="/portal" className="nav-button">
             <span className="button-text">2. Användarportal</span>
           </Link>
         </div>
@@ -48,7 +48,7 @@ function Start() {
 
       <div className="button-row">
         <div className="button-container dashboard-button">
-          <Link to="/dashboard-intro" className="nav-button">
+          <Link to="/dashboard" className="nav-button">
             <span className="button-text">3. Pågående händelser</span>
           </Link>
         </div>
@@ -59,7 +59,7 @@ function Start() {
 
       <div className="button-row">
         <div className="button-container notification-button">
-          <Link to="/notification-intro" className="nav-button">
+          <Link to="/notification" className="nav-button">
             <span className="button-text">4. Varning</span>
           </Link>
         </div>
@@ -70,7 +70,7 @@ function Start() {
 
       <div className="button-row">
         <div className="button-container social-button">
-          <Link to="/social-intro" className="nav-button">
+          <Link to="/social" className="nav-button">
             <span className="button-text">5. Sociala nätverk</span>
           </Link>
         </div>
