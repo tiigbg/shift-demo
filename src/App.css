@@ -1790,7 +1790,7 @@
 
 .observation-buttons {
   display: flex;
-  gap: 8px;
+  gap: 18px;
 }
 
 .observation-button {
@@ -1833,9 +1833,9 @@
 
 .social-input-container {
   position: absolute;
-  bottom: 75px;
+  top: 531px;
   left: 11px;
-  right: 11px;
+  width: 350px;
   height: 56px;
   display: flex;
   align-items: center;
@@ -1887,7 +1887,7 @@
   left: 40px;
   right: 31px;
   display: flex;
-  gap: 40px;
+  gap: 34px;
   align-items: center;
 }
 
