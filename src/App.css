@@ -1001,7 +1001,6 @@
 .observation-item {
   display: flex;
   align-items: center;
-  padding: 16px;
   border-bottom: 1px solid #cac4d0;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -1012,8 +1011,9 @@
 }
 
 .observation-icon {
-  position: relative;
-  margin-right: 16px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .observation-icon img {
@@ -1021,16 +1021,20 @@
   height: 17px;
 }
 
-.observation-warning-icon {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  width: 19px;
-  height: 19px;
-}
-
 .observation-content {
   flex: 1;
+}
+
+.observation-warning {
+  display: flex;
+  align-items: center;
+}
+
+.observation-warning-icon {
+  width: 19px;
+  height: 19px;
+  margin-right: 16px;
+  margin-top: 32px;
 }
 
 .observation-title {
@@ -1715,7 +1719,6 @@
 
 .observations-list {
   position: absolute;
-  top: 196px;
   left: 11px;
   right: 11px;
   bottom: 150px;
@@ -1749,7 +1752,7 @@
   flex: 1;
   background-color: #fef7ff;
   border-radius: 16px;
-  padding: 10px 16px;
+  padding: 10px 4px;
   min-height: 63px;
 }
 

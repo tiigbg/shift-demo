@@ -45,14 +45,16 @@ function Dashboard() {
           >
             <div className="observation-icon">
               <img src={imgQuadrocopter} alt="Drone" />
-              {obs.hasWarning && (
-                <img src={imgWarning} alt="Warning" className="observation-warning-icon" />
-              )}
             </div>
             <div className="observation-content">
               <div className="observation-title">{obs.title}</div>
               <div className="observation-location">{obs.location}</div>
             </div>
+            {obs.hasWarning && (
+              <div className="observation-warning">
+                <img src={imgWarning} alt="Warning" className="observation-warning-icon" />
+              </div>
+            )}
           </div>
         ))}
       </div>
