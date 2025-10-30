@@ -73,7 +73,7 @@ function PortalMain() {
       {/* Reports List */}
       <div className="reports-list">
         {reports.map((report) => (
-          <div key={report.id} className="report-item" onClick={() => navigate('/portal/detail')}>
+          <div key={report.id} className="report-item">
             <div className="report-icon">
               <img src={imgQuadrocopter} alt="Drone" />
             </div>

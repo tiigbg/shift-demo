@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
@@ -10,10 +10,60 @@ const imgQuadrocopter = "https://www.figma.com/api/mcp/asset/332682ae-f6f0-482e-
 const imgVector1 = "https://www.figma.com/api/mcp/asset/a0fc3af2-d22a-4048-aeb6-120cd46ea7f3";
 const imgEllipse1 = "https://www.figma.com/api/mcp/asset/4d8256df-ce38-476d-81ef-85ff43cc0d1e";
 const imgVector2 = "https://www.figma.com/api/mcp/asset/461edf9d-8bb5-4104-93fd-ff246f57e4b8";
+const imgDownArrow = "https://www.figma.com/api/mcp/asset/13011251-ae1f-4cb1-ad04-35f1188d41f3"; // Arrow between texts
 
 function ReportStart() {
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState(null);
+  const [heading, setHeading] = useState(0);
+  const [permissionGranted, setPermissionGranted] = useState(false);
+
+  useEffect(() => {
+    // Request permission for iOS 13+ devices
+    const requestPermission = async () => {
+      if (typeof DeviceOrientationEvent !== 'undefined' &&
+          typeof DeviceOrientationEvent.requestPermission === 'function') {
+        try {
+          const permission = await DeviceOrientationEvent.requestPermission();
+          if (permission === 'granted') {
+            setPermissionGranted(true);
+          }
+        } catch (error) {
+          console.log('Permission denied:', error);
+        }
+      } else {
+        // Non-iOS devices or older iOS versions
+        setPermissionGranted(true);
+      }
+    };
+
+    requestPermission();
+  }, []);
+
+  useEffect(() => {
+    if (!permissionGranted) return;
+
+    const handleOrientation = (event) => {
+      // Use alpha for compass heading (0-360 degrees)
+      // alpha: rotation around z-axis
+      let compassHeading = event.alpha;
+
+      // For iOS devices, use webkitCompassHeading if available
+      if (event.webkitCompassHeading) {
+        compassHeading = event.webkitCompassHeading;
+      }
+
+      if (compassHeading !== null) {
+        setHeading(compassHeading);
+      }
+    };
+
+    window.addEventListener('deviceorientation', handleOrientation);
+
+    return () => {
+      window.removeEventListener('deviceorientation', handleOrientation);
+    };
+  }, [permissionGranted]);
 
   const handleDroneSelect = (type) => {
     setSelectedType(type);
@@ -35,19 +85,24 @@ function ReportStart() {
         <h1 className="app-bar-title">Skapa ny rapport</h1>
       </div>
 
+      {/* Arrow between title and instruction */}
+      <div className="report-down-arrow">
+        <img src={imgDownArrow} alt="" className="down-arrow-icon" />
+      </div>
+
       {/* Instructions */}
       <div className="report-instruction-top">
         <p>Rikta pilen mot observationen</p>
       </div>
 
-      {/* Compass with rotated arrow */}
+      {/* Interactive Compass with gyroscope */}
       <div className="compass-container">
-        <div className="compass-circle">
+        <div className="compass-circle" style={{ transform: `rotate(${-heading}deg)` }}>
           <img src={imgEllipse1} alt="Compass" className="compass-image" />
-          <img src={imgVector1} alt="Arrow" className="compass-arrow-rotated" />
           <span className="compass-n">N</span>
           <span className="compass-s">S</span>
         </div>
+        <img src={imgVector1} alt="Arrow" className="compass-arrow-fixed" />
       </div>
 
       {/* Bottom instruction */}

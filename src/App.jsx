@@ -64,15 +64,6 @@ function App() {
         <Route path="/portal/edit/size" element={<EditSize />} />
         <Route path="/portal/edit/type" element={<EditType />} />
         <Route path="/portal/edit/media" element={<EditMedia />} />
-        <Route
-          path="/portal/detail"
-          element={
-            <PlaceholderPage
-              title="Rapportdetaljer"
-              description="Här kan du se detaljer om din rapport och dess status."
-            />
-          }
-        />
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
