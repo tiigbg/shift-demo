@@ -1,13 +1,87 @@
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import '../../../App.css';
 
-const imgMap = "https://www.figma.com/api/mcp/asset/3e8c5f8a-9b2a-4c8e-8f7e-5a6d4c9b2e1f";
 const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
 
 function EditPosition() {
   const navigate = useNavigate();
+  const mapRef = useRef(null);
+  const mapInstanceRef = useRef(null);
+  const markerRef = useRef(null);
+  const [position, setPosition] = useState({ lat: 57.71, lng: 11.97 }); // Default: Göteborg
+
+  useEffect(() => {
+    // Get user's current location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const userPos = {
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude
+          };
+          setPosition(userPos);
+        },
+        (error) => {
+          console.log('Could not get location, using default:', error);
+        }
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mapRef.current || mapInstanceRef.current) return;
+
+    // Initialize map
+    const map = L.map(mapRef.current).setView([position.lat, position.lng], 13);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Add draggable marker
+    const marker = L.marker([position.lat, position.lng], {
+      draggable: true
+    }).addTo(map);
+
+    // Update position when marker is dragged
+    marker.on('dragend', (e) => {
+      const newPos = e.target.getLatLng();
+      setPosition({ lat: newPos.lat, lng: newPos.lng });
+    });
+
+    // Allow clicking on map to move marker
+    map.on('click', (e) => {
+      marker.setLatLng(e.latlng);
+      setPosition({ lat: e.latlng.lat, lng: e.latlng.lng });
+    });
+
+    mapInstanceRef.current = map;
+    markerRef.current = marker;
+
+    // Cleanup
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, []);
+
+  // Update map when position changes from geolocation
+  useEffect(() => {
+    if (mapInstanceRef.current && markerRef.current) {
+      mapInstanceRef.current.setView([position.lat, position.lng], 13);
+      markerRef.current.setLatLng([position.lat, position.lng]);
+    }
+  }, [position]);
 
   const handleSave = () => {
+    console.log('Saved position:', position);
     navigate('/portal');
   };
 
@@ -30,14 +104,9 @@ function EditPosition() {
         Dra eller tryck för att ändra position
       </div>
 
-      {/* Map placeholder - In a real app, this would be an interactive map */}
+      {/* Real Interactive Map */}
       <div className="edit-map-container">
-        <div className="edit-map-placeholder">
-          {/* Map would go here */}
-          <div className="map-marker">
-            <div className="marker-pin"></div>
-          </div>
-        </div>
+        <div ref={mapRef} className="leaflet-map"></div>
       </div>
 
       {/* Bottom buttons */}
