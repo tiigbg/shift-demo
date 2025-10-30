@@ -13,13 +13,15 @@ function Dashboard() {
       id: 1,
       title: 'UAV i område (11 observationer)',
       location: 'Tuve',
-      hasWarning: true
+      hasWarning: true,
+      route: '/dashboard/map/tuve'
     },
     {
       id: 2,
       title: 'UAV i rörelse (23 observationer)',
       location: 'Längs Göta älv',
-      hasWarning: true
+      hasWarning: true,
+      route: '/dashboard/map/gota'
     }
   ];
 
@@ -39,7 +41,7 @@ function Dashboard() {
           <div
             key={obs.id}
             className="observation-item"
-            onClick={() => navigate('/dashboard/map')}
+            onClick={() => navigate(obs.route)}
           >
             <div className="observation-icon">
               <img src={imgQuadrocopter} alt="Drone" />
@@ -56,8 +58,8 @@ function Dashboard() {
       </div>
 
       {/* Action Button */}
-      <button className="dashboard-action-button" onClick={() => navigate('/dashboard/map')}>
-        → Visa karta
+      <button className="dashboard-action-button" onClick={() => navigate('/')}>
+        ← Gå tillbaka
       </button>
     </div>
   );
