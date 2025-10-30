@@ -26,6 +26,8 @@ import EditMedia from './pages/portal/edit/EditMedia';
 // Dashboard
 import Dashboard from './pages/dashboard/Dashboard';
 import DashboardMap from './pages/dashboard/DashboardMap';
+import DashboardMapTuve from './pages/dashboard/DashboardMapTuve';
+import DashboardMapGota from './pages/dashboard/DashboardMapGota';
 
 // Notification
 import Notification from './pages/notification/Notification';
@@ -75,6 +77,8 @@ function App() {
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/map" element={<DashboardMap />} />
+        <Route path="/dashboard/map/tuve" element={<DashboardMapTuve />} />
+        <Route path="/dashboard/map/gota" element={<DashboardMapGota />} />
 
         {/* Notifications */}
         <Route path="/notification" element={<Notification />} />

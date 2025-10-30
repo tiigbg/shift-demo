@@ -2378,3 +2378,80 @@
 .notification-open-button:active {
   background-color: #4c3580;
 }
+
+/* ===== STATIC MAP SCREENS STYLES ===== */
+
+.static-map-container {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 375px;
+  height: 603px;
+  overflow: hidden;
+}
+
+.static-map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.map-back-button {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6750a4;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 10;
+}
+
+.map-back-button:hover {
+  background-color: #5a3f94;
+}
+
+.map-back-button:active {
+  background-color: #4c3580;
+}
+
+.back-icon-small {
+  width: 24px;
+  height: 24px;
+}
+
+/* Fullscreen Map Containers */
+.fullscreen-map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 667px;
+  overflow: hidden;
+}
+
+.fullscreen-map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
