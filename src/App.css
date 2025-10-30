@@ -2053,6 +2053,18 @@
   left: 10px;
 }
 
+/* Leaflet Map Styles */
+.leaflet-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Fix Leaflet marker icon paths */
+.leaflet-default-icon-path {
+  background-image: url(https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png);
+}
+
 /* Edit Size Styles */
 .edit-size-options {
   position: absolute;
