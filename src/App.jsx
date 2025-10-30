@@ -18,6 +18,10 @@ import Thanks from './pages/report/Thanks';
 
 // Portal
 import PortalMain from './pages/portal/PortalMain';
+import EditPosition from './pages/portal/edit/EditPosition';
+import EditSize from './pages/portal/edit/EditSize';
+import EditType from './pages/portal/edit/EditType';
+import EditMedia from './pages/portal/edit/EditMedia';
 
 // Dashboard
 import Dashboard from './pages/dashboard/Dashboard';
@@ -54,6 +58,10 @@ function App() {
 
         {/* Portal */}
         <Route path="/portal" element={<PortalMain />} />
+        <Route path="/portal/edit/position" element={<EditPosition />} />
+        <Route path="/portal/edit/size" element={<EditSize />} />
+        <Route path="/portal/edit/type" element={<EditType />} />
+        <Route path="/portal/edit/media" element={<EditMedia />} />
         <Route
           path="/portal/detail"
           element={

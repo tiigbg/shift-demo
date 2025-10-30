@@ -1,119 +1,65 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
-
 function Notification() {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState('');
 
-  const handleSubmit = () => {
-    if (selectedOption) {
-      navigate('/notification/confirmation');
-    }
+  const handleOpenApp = () => {
+    navigate('/dashboard');
   };
 
   return (
-    <div className="app-container bg-white">
-      {/* App Bar */}
-      <div className="report-app-bar">
-        <button className="menu-button" onClick={() => navigate('/')}>
-          <img src={imgMenuIcon} alt="Menu" className="menu-icon" />
-        </button>
-        <h1 className="app-bar-title">Mina Tjänster</h1>
-      </div>
-
-      {/* Service Card */}
-      <div className="service-card">
-        <div className="service-header">
-          <div className="service-avatar">A</div>
-          <h3 className="service-title">Civil rapportering</h3>
+    <div className="app-container notification-overlay-bg">
+      {/* Phone home screen background */}
+      <div className="phone-home-screen">
+        {/* Simulated phone status bar */}
+        <div className="phone-status-bar">
+          <span className="phone-time">9:41</span>
+          <div className="phone-status-icons">
+            <span>📶</span>
+            <span>📡</span>
+            <span>🔋</span>
+          </div>
         </div>
 
-        <div className="service-content">
-          <p className="service-description">
-            Har du gått utbildning i grundläggande civil rapportering och vill bidra
-            med din kompetens till andra? Här kan du anmäla dig för att vara tillgänglig
-            om något händer där du befinner dig.
+        {/* App icons grid */}
+        <div className="phone-app-grid">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="phone-app-icon">
+              <div className="app-icon-placeholder"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Phone dock */}
+        <div className="phone-dock">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="phone-dock-icon">
+              <div className="dock-icon-placeholder"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Notification Card Overlay */}
+      <div className="notification-card-overlay">
+        <div className="notification-card">
+          <div className="notification-card-header">
+            <div className="notification-logo">SHIFT</div>
+            <span className="notification-time">NU</span>
+          </div>
+
+          <h2 className="notification-card-title">Pågående Situation</h2>
+
+          <p className="notification-card-message">
+            Rör dig mot säkerhet och förbered person för vidare observationer
           </p>
 
-          <button className="service-action-button">
-            Anmäl ditt intresse
+          <button className="notification-open-button" onClick={handleOpenApp}>
+            Öppna appen
           </button>
         </div>
       </div>
-
-      {/* Alternative: Notification Settings */}
-      <div className="notification-settings">
-        <h3 className="settings-title">Notifieringsinställningar</h3>
-        <p className="settings-description">
-          Välj vilka typer av varningar du vill ta emot:
-        </p>
-
-        <div className="radio-group">
-          <label className="radio-option">
-            <input
-              type="radio"
-              name="notification"
-              value="all"
-              checked={selectedOption === 'all'}
-              onChange={(e) => setSelectedOption(e.target.value)}
-            />
-            <span>Alla varningar och observationer</span>
-          </label>
-
-          <label className="radio-option">
-            <input
-              type="radio"
-              name="notification"
-              value="urgent"
-              checked={selectedOption === 'urgent'}
-              onChange={(e) => setSelectedOption(e.target.value)}
-            />
-            <span>Endast brådskande varningar</span>
-          </label>
-
-          <label className="radio-option">
-            <input
-              type="radio"
-              name="notification"
-              value="local"
-              checked={selectedOption === 'local'}
-              onChange={(e) => setSelectedOption(e.target.value)}
-            />
-            <span>Endast i mitt område</span>
-          </label>
-
-          <label className="radio-option">
-            <input
-              type="radio"
-              name="notification"
-              value="none"
-              checked={selectedOption === 'none'}
-              onChange={(e) => setSelectedOption(e.target.value)}
-            />
-            <span>Inga notifieringar</span>
-          </label>
-        </div>
-
-        <div className="notification-buttons">
-          <button className="secondary-button" onClick={() => navigate('/')}>
-            Avbryt
-          </button>
-          <button
-            className={`primary-button ${!selectedOption ? 'disabled' : ''}`}
-            onClick={handleSubmit}
-            disabled={!selectedOption}
-          >
-            Spara
-          </button>
-        </div>
-      </div>
-
-      <button className="back-button" onClick={() => navigate('/')}>
-        Klar
-      </button>
     </div>
   );
 }

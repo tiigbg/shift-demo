@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
@@ -12,7 +13,7 @@ const imgSendIcon = "https://www.figma.com/api/mcp/asset/38394d9b-5b9a-445f-96a5
 function Social() {
   const navigate = useNavigate();
 
-  const observations = [
+  const [observations, setObservations] = useState([
     {
       id: 1,
       user: 'Ärlig Räka',
@@ -34,7 +35,15 @@ function Social() {
       time: '14:32',
       likes: 3
     }
-  ];
+  ]);
+
+  const handleLike = (observationId) => {
+    setObservations(observations.map(obs =>
+      obs.id === observationId
+        ? { ...obs, likes: obs.likes + 1 }
+        : obs
+    ));
+  };
 
   return (
     <div className="app-container bg-white">
@@ -60,14 +69,26 @@ function Social() {
       <div className="observations-list">
         {observations.map((obs) => (
           <div key={obs.id} className="observation-card">
-            <div className="observation-avatar"></div>
+            <div className="observation-avatar">
+              <span className="avatar-icon">👤</span>
+            </div>
             <div className="observation-content">
-              <p className="observation-user">{obs.user}</p>
-              <p className="observation-message">{obs.message}</p>
+              <div className="observation-text-content">
+                <p className="observation-user-message">
+                  <span className="observation-user-name">{obs.user}</span>
+                  <br />
+                  {obs.message}
+                </p>
+              </div>
               <div className="observation-actions">
                 <span className="observation-time">{obs.time}</span>
                 <div className="observation-buttons">
-                  <button className="observation-button">Gilla</button>
+                  <button
+                    className="observation-button"
+                    onClick={() => handleLike(obs.id)}
+                  >
+                    Gilla
+                  </button>
                   <button className="observation-button">Svara</button>
                 </div>
                 <div className="observation-likes">

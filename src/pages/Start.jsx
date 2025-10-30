@@ -59,7 +59,7 @@ function Start() {
 
       <div className="button-row">
         <div className="button-container notification-button">
-          <Link to="/notification" className="nav-button">
+          <Link to="/notification-intro" className="nav-button">
             <span className="button-text">4. Varning</span>
           </Link>
         </div>
