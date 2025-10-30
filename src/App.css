@@ -2091,6 +2091,66 @@
   margin-bottom: 8px;
 }
 
+.size-comparison {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 0px;
+}
+
+/* Small size - small drone, large person */
+.size-option:nth-child(1) .drone-icon {
+  max-height: 10px;
+  width: auto;
+}
+
+.size-option:nth-child(1) .person-icon {
+  max-height: 90px;
+  width: auto;
+}
+
+/* Medium size - medium drone, medium person */
+.size-option:nth-child(2) .drone-icon {
+  max-height: 25px;
+  width: auto;
+}
+
+.size-option:nth-child(2) .person-icon {
+  max-height: 80px;
+  width: auto;
+}
+
+/* Large size - large drone, small person */
+.size-option:nth-child(3) .drone-icon {
+  max-height: 40px;
+  width: auto;
+}
+
+.size-option:nth-child(3) .person-icon {
+  max-height: 45px;
+  width: auto;
+}
+
+.size-comparison-medium {
+  position: relative;
+}
+
+.size-measurement {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #6750a4;
+}
+
 .size-label {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -2135,6 +2195,18 @@
 .type-icon {
   font-size: 64px;
   margin-bottom: 8px;
+  width: 140px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-icon img {
+  max-width: 140px;
+  max-height: 64px;
+  width: auto;
+  height: auto;
 }
 
 .type-label {
