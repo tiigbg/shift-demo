@@ -101,8 +101,8 @@ function ReportStart() {
           <img src={imgEllipse1} alt="Compass" className="compass-image" />
           <span className="compass-n">N</span>
           <span className="compass-s">S</span>
+          <img src={imgVector1} alt="Arrow" className="compass-arrow-rotating" />
         </div>
-        <img src={imgVector1} alt="Arrow" className="compass-arrow-fixed" />
       </div>
 
       {/* Bottom instruction */}

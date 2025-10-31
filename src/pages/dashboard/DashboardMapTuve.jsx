@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 import mapImage from '../../../Assets/Situation Tuve.png';
 
-const imgBackIcon = "https://www.figma.com/api/mcp/asset/343eb2f8-3cfe-46d5-a50e-072af2bba964";
-
 function DashboardMapTuve() {
   const navigate = useNavigate();
 
@@ -16,8 +14,7 @@ function DashboardMapTuve() {
 
       {/* Back Button Overlay */}
       <button className="map-back-button" onClick={() => navigate('/dashboard')}>
-        <img src={imgBackIcon} alt="Back" className="back-icon-small" />
-        <span>Gå tillbaka</span>
+        ← Gå tillbaka
       </button>
     </div>
   );

@@ -436,6 +436,25 @@
   pointer-events: none;
 }
 
+.compass-arrow-rotating {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 54.5px;
+  height: 55px;
+  animation: compassSway 2s ease-in-out infinite;
+}
+
+@keyframes compassSway {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(1deg);
+  }
+}
+
 .compass-arrow-rotated {
   position: absolute;
   left: 50%;
@@ -1025,7 +1044,6 @@
   top: 64px;
   left: 8px;
   width: 360px;
-  background-color: #fef7ff;
 }
 
 .observation-item {
@@ -1749,6 +1767,7 @@
 
 .observations-list {
   position: absolute;
+  top: 195px;
   left: 11px;
   right: 11px;
   bottom: 150px;
@@ -1780,14 +1799,16 @@
 
 .observation-content {
   flex: 1;
-  background-color: #fef7ff;
-  border-radius: 16px;
-  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
   min-height: 63px;
 }
 
 .observation-text-content {
-  margin-bottom: 8px;
+  background-color: #fef7ff;
+  border-radius: 16px;
+  padding: 10px 12px;
+  margin-bottom: 4px;
 }
 
 .observation-user-message {
@@ -1809,7 +1830,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 4px;
+  margin-top: 0;
+  padding-left: 12px;
 }
 
 .observation-time {
@@ -1827,8 +1849,8 @@
 }
 
 .observation-button {
-  background-color: #f3edf7;
-  border: none;
+  background-color: #ffffff;
+  border: 1px solid #e6e0e9;
   border-radius: 100px;
   padding: 6px 12px;
   font-family: 'Roboto', sans-serif;
@@ -1841,7 +1863,7 @@
 }
 
 .observation-button:hover {
-  background-color: #e6e0e9;
+  background-color: #f5f0ff;
 }
 
 .observation-likes {
@@ -2106,7 +2128,7 @@
   right: 17px;
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 8px;
 }
 
 .size-option {
@@ -2204,6 +2226,33 @@
   color: #1d1b20;
 }
 
+/* Size option with pre-made button images */
+.size-option-image {
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 16px;
+}
+
+.size-option-image:hover {
+  background-color: #f5f0ff;
+}
+
+.size-option-image.selected {
+  background-color: #eaddff;
+  border: 3px solid #6750a4;
+  padding: 1px;
+}
+
+.size-button-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
 /* Edit Type Styles */
 .edit-type-options {
   position: absolute;
@@ -2212,7 +2261,7 @@
   right: 19px;
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 8px;
 }
 
 .type-option {
@@ -2262,6 +2311,33 @@
   color: #1d1b20;
 }
 
+/* Type option with pre-made button images */
+.type-option-image {
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 16px;
+}
+
+.type-option-image:hover {
+  background-color: #f5f0ff;
+}
+
+.type-option-image.selected {
+  background-color: #eaddff;
+  border: 3px solid #6750a4;
+  padding: 1px;
+}
+
+.type-button-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
 /* Edit Media Styles */
 .edit-media-options {
   position: absolute;
@@ -2293,6 +2369,12 @@
 
 .media-icon {
   font-size: 24px;
+}
+
+.media-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .media-label {

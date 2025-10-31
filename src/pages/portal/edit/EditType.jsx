@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../../App.css';
+import btnQuadcopter from '../../../../Assets/Button quadcopter.png';
+import btnFastvingad from '../../../../Assets/Button Fastvingad.png';
+import btnBalloon from '../../../../Assets/Button Balloon.png';
 
 const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
-const imgQuadrocopter = "https://www.figma.com/api/mcp/asset/381bf3e0-bccb-40ba-b5bc-8772ab729ab4";
-const imgFixedWing = "https://www.figma.com/api/mcp/asset/2c5c0155-d28c-4fed-b73b-fbab4152418e";
-const imgBalloon = "https://www.figma.com/api/mcp/asset/599b573f-04ef-48b6-8aef-978b65bc8ee1";
 
 function EditType() {
   const navigate = useNavigate();
@@ -37,33 +37,24 @@ function EditType() {
       {/* Type options */}
       <div className="edit-type-options">
         <button
-          className={`type-option ${selectedType === 'quadrocopter' ? 'selected' : ''}`}
+          className={`type-option-image ${selectedType === 'quadrocopter' ? 'selected' : ''}`}
           onClick={() => setSelectedType('quadrocopter')}
         >
-          <div className="type-icon">
-            <img src={imgQuadrocopter} alt="Quadrocopter" />
-          </div>
-          <span className="type-label">Quadrocopter</span>
+          <img src={btnQuadcopter} alt="Quadrocopter" className="type-button-image" />
         </button>
 
         <button
-          className={`type-option ${selectedType === 'fastvingad' ? 'selected' : ''}`}
+          className={`type-option-image ${selectedType === 'fastvingad' ? 'selected' : ''}`}
           onClick={() => setSelectedType('fastvingad')}
         >
-          <div className="type-icon">
-            <img src={imgFixedWing} alt="Fastvingad" />
-          </div>
-          <span className="type-label">Fastvingad</span>
+          <img src={btnFastvingad} alt="Fastvingad" className="type-button-image" />
         </button>
 
         <button
-          className={`type-option ${selectedType === 'ballong' ? 'selected' : ''}`}
+          className={`type-option-image ${selectedType === 'ballong' ? 'selected' : ''}`}
           onClick={() => setSelectedType('ballong')}
         >
-          <div className="type-icon">
-            <img src={imgBalloon} alt="Ballong" />
-          </div>
-          <span className="type-label">Ballong</span>
+          <img src={btnBalloon} alt="Ballong" className="type-button-image" />
         </button>
       </div>
 

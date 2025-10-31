@@ -63,7 +63,7 @@ function Start() {
             <span className="button-text">4. Varning</span>
           </Link>
         </div>
-        <Link to="/notification" className="help-icon-container help-4" title="Hjälp">
+        <Link to="/notification-intro" className="help-icon-container help-4" title="Hjälp">
           <img src={imgHelp} alt="Help" className="help-icon" />
         </Link>
       </div>

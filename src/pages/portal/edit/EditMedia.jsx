@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import '../../../App.css';
+import iconPen from '../../../../Assets/icon pen.png';
+import iconCamera from '../../../../Assets/Icon camera.png';
+import iconMic from '../../../../Assets/Icon mic.png';
 
 const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
 
@@ -32,17 +35,17 @@ function EditMedia() {
       {/* Media options */}
       <div className="edit-media-options">
         <button className="media-option" onClick={() => alert('Lägg till beskrivning')}>
-          <span className="media-icon">✏️</span>
+          <img src={iconPen} alt="Beskrivning" className="media-icon-img" />
           <span className="media-label">Lägg till beskrivning</span>
         </button>
 
         <button className="media-option" onClick={() => alert('Lägg till video')}>
-          <span className="media-icon">🎥</span>
+          <img src={iconCamera} alt="Video" className="media-icon-img" />
           <span className="media-label">Lägg till video</span>
         </button>
 
         <button className="media-option" onClick={() => alert('Lägg till ljudinspelning')}>
-          <span className="media-icon">🎤</span>
+          <img src={iconMic} alt="Ljud" className="media-icon-img" />
           <span className="media-label">Lägg till ljudinspelning</span>
         </button>
       </div>
