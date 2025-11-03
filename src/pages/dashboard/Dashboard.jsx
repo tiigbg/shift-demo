@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgQuadrocopter = "https://www.figma.com/api/mcp/asset/8255f79b-59f1-43f8-804d-bc4d769c6a17";
-const imgWarning = "https://www.figma.com/api/mcp/asset/e5cf7063-aafa-4799-b8de-46fe66a7d40b";
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
+const imgQuadrocopter = "/assets/images/8255f79b-59f1-43f8-804d-bc4d769c6a17.svg";
+const imgWarning = "/assets/images/e5cf7063-aafa-4799-b8de-46fe66a7d40b.svg";
+const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 
 function Dashboard() {
   const navigate = useNavigate();

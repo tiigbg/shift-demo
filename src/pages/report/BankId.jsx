@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 // Updated Figma assets
-const imgBankId = "https://www.figma.com/api/mcp/asset/3bbd26e0-5789-4cbe-8b4b-bc7760c16175";
-const imgBankIdIconBtn = "https://www.figma.com/api/mcp/asset/aeb41408-bcca-4b88-9c4e-f84335a386e9";
+const imgBankId = "/assets/images/3bbd26e0-5789-4cbe-8b4b-bc7760c16175.png";
+const imgBankIdIconBtn = "/assets/images/aeb41408-bcca-4b88-9c4e-f84335a386e9.svg";
 
 function BankId() {
   const navigate = useNavigate();

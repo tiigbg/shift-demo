@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgQuadrocopter = "https://www.figma.com/api/mcp/asset/bf3a6fc7-1f35-465c-a784-8a531ad9d5e2";
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
-const imgCheckmark = "https://www.figma.com/api/mcp/asset/e35e5be4-4d65-46ae-88d9-2e3df73bd1b4";
-const imgCloseIcon = "https://www.figma.com/api/mcp/asset/adc67f85-404a-4fe7-9030-ea68ec828fe3";
-const imgLocationIcon = "https://www.figma.com/api/mcp/asset/d10973cb-940b-49b2-a778-ddf73cfb6f13";
+const imgQuadrocopter = "/assets/images/bf3a6fc7-1f35-465c-a784-8a531ad9d5e2.svg";
+const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
+const imgCheckmark = "/assets/images/e35e5be4-4d65-46ae-88d9-2e3df73bd1b4.svg";
+const imgCloseIcon = "/assets/images/close-icon.svg";
+const imgLocationIcon = "/assets/images/d10973cb-940b-49b2-a778-ddf73cfb6f13.svg";
 
 function PortalMain() {
   const navigate = useNavigate();

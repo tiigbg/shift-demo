@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 // Image URLs from Figma
-const imgBackArrow = "https://www.figma.com/api/mcp/asset/d04482a0-675a-4b27-8d7f-eb648251a60c";
+const imgBackArrow = "/assets/images/d04482a0-675a-4b27-8d7f-eb648251a60c.svg";
 
 function PortalIntro() {
   const navigate = useNavigate();

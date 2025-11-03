@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 // Updated Figma assets
-const imgIcon = "https://www.figma.com/api/mcp/asset/2a9c091d-d1ec-4200-a6ce-aa59fd20836a";
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/51de5c7c-d087-4410-9fff-2f0d6cc3d21c";
-const imgArrowIcon = "https://www.figma.com/api/mcp/asset/e87cbb20-20a6-4374-8a07-7034d7c0e70a";
-const imgQuadrocopter = "https://www.figma.com/api/mcp/asset/332682ae-f6f0-482e-8683-29db6e99b315";
-const imgVector1 = "https://www.figma.com/api/mcp/asset/a0fc3af2-d22a-4048-aeb6-120cd46ea7f3";
-const imgEllipse1 = "https://www.figma.com/api/mcp/asset/4d8256df-ce38-476d-81ef-85ff43cc0d1e";
-const imgVector2 = "https://www.figma.com/api/mcp/asset/461edf9d-8bb5-4104-93fd-ff246f57e4b8";
-const imgDownArrow = "https://www.figma.com/api/mcp/asset/13011251-ae1f-4cb1-ad04-35f1188d41f3"; // Arrow between texts
+const imgIcon = "/assets/images/2a9c091d-d1ec-4200-a6ce-aa59fd20836a.svg";
+const imgMenuIcon = "/assets/images/51de5c7c-d087-4410-9fff-2f0d6cc3d21c.svg";
+const imgArrowIcon = "/assets/images/e87cbb20-20a6-4374-8a07-7034d7c0e70a.svg";
+const imgQuadrocopter = "/assets/images/332682ae-f6f0-482e-8683-29db6e99b315.svg";
+const imgVector1 = "/assets/images/a0fc3af2-d22a-4048-aeb6-120cd46ea7f3.svg";
+const imgEllipse1 = "/assets/images/4d8256df-ce38-476d-81ef-85ff43cc0d1e.svg";
+const imgVector2 = "/assets/images/461edf9d-8bb5-4104-93fd-ff246f57e4b8.svg";
+const imgDownArrow = "/assets/images/13011251-ae1f-4cb1-ad04-35f1188d41f3.svg"; // Arrow between texts
 
 function ReportStart() {
   const navigate = useNavigate();

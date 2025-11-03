@@ -5,7 +5,7 @@ import btnSmall from '../../../../Assets/Button scale small.png';
 import btnMedium from '../../../../Assets/Button scale Medium.png';
 import btnBig from '../../../../Assets/Button scale Big.png';
 
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
+const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 
 function EditSize() {
   const navigate = useNavigate();

@@ -52,7 +52,7 @@ Routes in `App.jsx` are grouped by feature domain. Each major feature has its ow
 - Timed transitions use `useEffect` with `setTimeout` (e.g., loading screens)
 
 **5. Asset Loading**
-Images and icons are loaded from Figma CDN URLs (stored as constants at top of components). These URLs expire after 7 days - they are placeholders for the prototype.
+Images and icons are stored locally in `public/assets/images/` and referenced as constants at the top of components using absolute paths (e.g., `/assets/images/filename.svg`).
 
 ### Data Flow
 
@@ -115,10 +115,11 @@ Several screens auto-navigate after delays (mimicking loading/processing):
 Pattern: `useEffect(() => { const timer = setTimeout(...); return () => clearTimeout(timer); }, [])`
 
 ### Image Assets
-Images are loaded from Figma CDN (7-day expiration). To update:
-1. Use Figma MCP tools to fetch new asset URLs (MCP configured in `.mcp.json`)
-2. Replace `const img* =` declarations at top of component files
-3. Assets are NOT committed to repo - URLs are temporary
+Images and icons are stored locally in `public/assets/images/`:
+- All assets downloaded from Figma and stored as SVG or PNG files
+- Assets are referenced with absolute paths: `/assets/images/filename.svg`
+- Each component declares image constants at the top (e.g., `const imgIcon = "/assets/images/xyz.svg"`)
+- Assets ARE committed to the repo for consistent builds
 
 ### Figma MCP Integration
 This project includes Figma MCP server configuration in `.mcp.json` for accessing design files:

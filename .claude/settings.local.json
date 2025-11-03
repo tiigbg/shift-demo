@@ -8,7 +8,8 @@
       "Bash(npm install:*)",
       "Bash(npm run dev:*)",
       "Bash(lsof:*)",
-      "Bash(kill:*)"
+      "Bash(kill:*)",
+      "Bash(node update-imports.js:*)"
     ],
     "deny": [],
     "ask": []
