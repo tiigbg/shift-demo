@@ -54,7 +54,7 @@ function ReportStart() {
       }
 
       if (compassHeading !== null) {
-        setHeading(compassHeading);
+        setHeading(-compassHeading);
       }
     };
 
@@ -97,7 +97,7 @@ function ReportStart() {
 
       {/* Interactive Compass with gyroscope */}
       <div className="compass-container">
-        <div className="compass-circle" style={{ transform: `rotate(${heading}deg)` }}>
+        <div className="compass-circle" style={{ transform: `rotate(${-heading}deg)` }}>
           <img src={imgEllipse1} alt="Compass" className="compass-image" />
           <span className="compass-n">N</span>
           <span className="compass-s">S</span>
