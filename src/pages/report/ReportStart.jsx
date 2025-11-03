@@ -54,7 +54,7 @@ function ReportStart() {
       }
 
       if (compassHeading !== null) {
-        setHeading(-compassHeading);
+        setHeading(compassHeading);
       }
     };
 
