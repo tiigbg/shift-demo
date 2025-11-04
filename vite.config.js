@@ -6,5 +6,16 @@ export default defineConfig({
   server: {
     host: true, // Expose on all network interfaces
     port: 5173, // Default port
+  },
+  preview: {
+    port: 4173,
+    host: true,
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      }
+    }
   }
 })
