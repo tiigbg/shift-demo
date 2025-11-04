@@ -54,7 +54,8 @@ function ReportStart() {
       }
 
       if (compassHeading !== null) {
-        setHeading(compassHeading);
+        // Invert the direction by subtracting from 360
+        setHeading(360 - compassHeading);
       }
     };
 
