@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 // Image URLs from Figma - Updated
-const imgQuadrocopter = "https://www.figma.com/api/mcp/asset/a9a098c7-9d11-429e-91da-5f24a4608541";
-const imgHelp = "https://www.figma.com/api/mcp/asset/d21b29f0-21bd-4e5a-82ad-3cd7cf90d1cd";
+const imgQuadrocopter = "/assets/images/a9a098c7-9d11-429e-91da-5f24a4608541.svg";
+const imgHelp = "/assets/images/d21b29f0-21bd-4e5a-82ad-3cd7cf90d1cd.svg";
 
 function Start() {
   return (

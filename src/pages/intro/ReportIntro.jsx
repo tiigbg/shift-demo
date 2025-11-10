@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 // Image URLs from Figma
-const imgBackArrow = "https://www.figma.com/api/mcp/asset/c25e6f14-08c9-49ff-87f0-123279198e11";
+const imgBackArrow = "/assets/images/c25e6f14-08c9-49ff-87f0-123279198e11.svg";
 
 function ReportIntro() {
   const navigate = useNavigate();

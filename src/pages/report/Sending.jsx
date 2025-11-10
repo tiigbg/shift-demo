@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 // Updated Figma assets
-const imgLogo = "https://www.figma.com/api/mcp/asset/645398cb-b2e4-41cc-9a82-87c2f922a700";
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/3245c943-803c-4d12-8253-6b5badfd1037";
-const imgLoadingContainer = "https://www.figma.com/api/mcp/asset/38c9cb4f-2d75-4c82-a285-6c171a87696c";
-const imgLoadingShape = "https://www.figma.com/api/mcp/asset/21bdd5e0-e1c3-47d1-9e4b-ee1fc6ae18f7";
+const imgLogo = "/assets/images/645398cb-b2e4-41cc-9a82-87c2f922a700.png";
+const imgMenuIcon = "/assets/images/3245c943-803c-4d12-8253-6b5badfd1037.svg";
+const imgLoadingContainer = "/assets/images/38c9cb4f-2d75-4c82-a285-6c171a87696c.svg";
+const imgLoadingShape = "/assets/images/21bdd5e0-e1c3-47d1-9e4b-ee1fc6ae18f7.svg";
 
 function Sending() {
   const navigate = useNavigate();

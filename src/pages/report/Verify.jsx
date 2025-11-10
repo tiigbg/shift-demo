@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 // Updated Figma assets
-const imgLogo = "https://www.figma.com/api/mcp/asset/3032dc75-5ef3-4fcd-93d8-c47fbb1602a7";
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/d2552609-178b-48ae-abe3-53fa44b2002c";
-const imgShieldIcon = "https://www.figma.com/api/mcp/asset/1177541c-d936-4a2d-a397-e4b6ba35e843";
-const imgBankIdIcon = "https://www.figma.com/api/mcp/asset/e470ef79-b61c-415b-b1a9-053f6a235858";
+const imgLogo = "/assets/images/3032dc75-5ef3-4fcd-93d8-c47fbb1602a7.png";
+const imgMenuIcon = "/assets/images/d2552609-178b-48ae-abe3-53fa44b2002c.svg";
+const imgShieldIcon = "/assets/images/1177541c-d936-4a2d-a397-e4b6ba35e843.svg";
+const imgBankIdIcon = "/assets/images/e470ef79-b61c-415b-b1a9-053f6a235858.svg";
 
 function Verify() {
   const navigate = useNavigate();

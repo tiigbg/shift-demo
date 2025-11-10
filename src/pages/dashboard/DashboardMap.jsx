@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgMap = "https://www.figma.com/api/mcp/asset/31c85e50-7fa9-4b18-b531-d3fc16566e34";
-const imgMenuIcon = "https://www.figma.com/api/mcp/asset/66002c8b-ae2c-49e1-a4bb-43e55f889a06";
+const imgMap = "/assets/images/31c85e50-7fa9-4b18-b531-d3fc16566e34.svg";
+const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 
 function DashboardMap() {
   const navigate = useNavigate();
