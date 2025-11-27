@@ -22,6 +22,8 @@ import EditPosition from './pages/portal/edit/EditPosition';
 import EditSize from './pages/portal/edit/EditSize';
 import EditType from './pages/portal/edit/EditType';
 import EditMedia from './pages/portal/edit/EditMedia';
+import Response1 from './pages/portal/Response1';
+import Response2 from './pages/portal/Response2';
 
 // Dashboard
 import Dashboard from './pages/dashboard/Dashboard';
@@ -64,6 +66,8 @@ function App() {
         <Route path="/portal/edit/size" element={<EditSize />} />
         <Route path="/portal/edit/type" element={<EditType />} />
         <Route path="/portal/edit/media" element={<EditMedia />} />
+        <Route path="/portal/response1" element={<Response1 />} />
+        <Route path="/portal/response2" element={<Response2 />} />
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />

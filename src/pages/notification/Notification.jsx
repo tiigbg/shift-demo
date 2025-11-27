@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
+const imgWarningIcon = "/Assets/icon varning.png";
+
 function Notification() {
   const navigate = useNavigate();
 
@@ -41,18 +43,56 @@ function Notification() {
         </div>
       </div>
 
-      {/* Notification Card Overlay */}
-      <div className="notification-card-overlay">
+      {/* Notification Card Overlay - First notification */}
+      <div className="notification-card-overlay" style={{top: '50px'}}>
         <div className="notification-card">
-          <div className="notification-card-header">
-            <div className="notification-logo">SHIFT</div>
-            <span className="notification-time">NU</span>
+          <div style={{display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px'}}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundColor: '#6750a4',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0
+            }}>
+              <img src={imgWarningIcon} alt="Warning" style={{width: '24px', height: '24px'}} />
+            </div>
+            <h2 className="notification-card-title" style={{margin: 0, paddingTop: '8px'}}>Drönarvarning (fred)</h2>
           </div>
 
-          <h2 className="notification-card-title">Pågående Situation</h2>
+          <p className="notification-card-message" style={{marginLeft: '52px', marginBottom: '16px'}}>
+            Drönaraktivitet har observerats i området. Håll uppe ögon och rapportera avvikande beteende.
+          </p>
 
-          <p className="notification-card-message">
-            Rör dig mot säkerhet och förbered person för vidare observationer
+          <button className="notification-open-button" onClick={handleOpenApp}>
+            Öppna appen
+          </button>
+        </div>
+      </div>
+
+      {/* Second notification */}
+      <div className="notification-card-overlay" style={{top: '230px'}}>
+        <div className="notification-card">
+          <div style={{display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px'}}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundColor: '#6750a4',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0
+            }}>
+              <img src={imgWarningIcon} alt="Warning" style={{width: '24px', height: '24px'}} />
+            </div>
+            <h2 className="notification-card-title" style={{margin: 0, paddingTop: '8px'}}>Drönarvarning (krig)</h2>
+          </div>
+
+          <p className="notification-card-message" style={{marginLeft: '52px', marginBottom: '16px'}}>
+            Identifierad drönaraktivitet med potentiell risk. Sök omedelbart skydd inomhus och undvik öppna området.
           </p>
 
           <button className="notification-open-button" onClick={handleOpenApp}>

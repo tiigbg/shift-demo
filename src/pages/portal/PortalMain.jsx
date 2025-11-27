@@ -7,6 +7,9 @@ const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 const imgCheckmark = "/assets/images/e35e5be4-4d65-46ae-88d9-2e3df73bd1b4.svg";
 const imgCloseIcon = "/assets/images/close-icon.svg";
 const imgLocationIcon = "/assets/images/d10973cb-940b-49b2-a778-ddf73cfb6f13.svg";
+const imgCheckboxIcon = "/Assets/check-box.png";
+const imgMessageIcon = "/Assets/Icon new message.png";
+const imgPenIcon = "/Assets/icon pen.png";
 
 function PortalMain() {
   const navigate = useNavigate();
@@ -15,30 +18,47 @@ function PortalMain() {
   const reports = [
     {
       id: 1,
-      time: 'Idag 10:45',
+      time: 'Idag, 10:45',
       location: 'Göteborg (overifierad)',
       type: 'air',
-      hasCheckmark: true
+      hasCheckbox: true,
+      verified: true
     },
     {
       id: 2,
-      time: '20 Sep 2025, 13:49',
-      location: 'Landvetter',
+      time: '20 Nov, 13:53',
+      location: 'Landvetter (verifierad)',
       type: 'air',
-      hasCheckmark: true
+      hasCheckbox: true,
+      verified: true
     },
     {
       id: 3,
-      time: '19 Aug 2023 , 17:23',
-      location: 'Göteborg',
+      time: '10 Okt, 18:53',
+      location: 'Nytt meddelande!',
       type: 'air',
-      hasCheckmark: true
+      hasMessage: true
+    },
+    {
+      id: 4,
+      time: '15 Sept, 11:24',
+      location: 'Nytt meddelande!',
+      type: 'air',
+      hasMessage: true
     }
   ];
 
   const handleEditClick = (e, reportId) => {
     e.stopPropagation();
     setActivePopup(reportId);
+  };
+
+  const handleMessageClick = (reportId) => {
+    if (reportId === 3) {
+      navigate('/portal/response1');
+    } else if (reportId === 4) {
+      navigate('/portal/response2');
+    }
   };
 
   const handleClosePopup = () => {
@@ -81,12 +101,28 @@ function PortalMain() {
               <div className="report-time">{report.time}</div>
               <div className="report-location">{report.location}</div>
             </div>
-            {report.hasCheckmark && (
+            {report.hasCheckbox && report.verified && (
+              <button
+                className="report-checkmark-button"
+                onClick={(e) => handleEditClick(e, report.id)}
+              >
+                <img src={imgPenIcon} alt="Edit" className="report-checkmark-icon" style={{width: '16px', height: '16px'}} />
+              </button>
+            )}
+            {report.hasCheckbox && !report.verified && (
               <button
                 className="report-checkmark-button"
                 onClick={(e) => handleEditClick(e, report.id)}
               >
                 <img src={imgCheckmark} alt="Edit" className="report-checkmark-icon" />
+              </button>
+            )}
+            {report.hasMessage && (
+              <button
+                className="report-message-button"
+                onClick={() => handleMessageClick(report.id)}
+              >
+                <img src={imgMessageIcon} alt="Message" className="message-icon" style={{width: '24px', height: '24px'}} />
               </button>
             )}
           </div>

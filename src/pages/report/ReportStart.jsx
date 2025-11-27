@@ -93,7 +93,7 @@ function ReportStart() {
 
       {/* Instructions */}
       <div className="report-instruction-top">
-        <p>Rikta pilen mot observationen</p>
+        <p>Rikta pilen i samma riktning som observartionen rör sig</p>
       </div>
 
       {/* Interactive Compass with gyroscope */}
