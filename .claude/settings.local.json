@@ -9,7 +9,12 @@
       "Bash(npm run dev:*)",
       "Bash(lsof:*)",
       "Bash(kill:*)",
-      "Bash(node update-imports.js:*)"
+      "Bash(node update-imports.js:*)",
+      "Bash(curl:*)",
+      "Bash(docker run:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker rm:*)",
+      "Bash(pkill:*)"
     ],
     "deny": [],
     "ask": []
