@@ -118,12 +118,12 @@ function PortalMain() {
               </button>
             )}
             {report.hasMessage && (
-              <button
-                className="report-message-button"
+              <img
+                src={imgMessageIcon}
+                alt="Message"
                 onClick={() => handleMessageClick(report.id)}
-              >
-                <img src={imgMessageIcon} alt="Message" className="message-icon" style={{width: '24px', height: '24px'}} />
-              </button>
+                style={{width: '48px', height: '48px', cursor: 'pointer'}}
+              />
             )}
           </div>
         ))}

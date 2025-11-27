@@ -44,21 +44,10 @@ function Notification() {
       </div>
 
       {/* Notification Card Overlay - First notification */}
-      <div className="notification-card-overlay" style={{top: '50px'}}>
+      <div className="notification-card-overlay" style={{top: '20px'}}>
         <div className="notification-card">
           <div style={{display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px'}}>
-            <div style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              backgroundColor: '#6750a4',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0
-            }}>
-              <img src={imgWarningIcon} alt="Warning" style={{width: '24px', height: '24px'}} />
-            </div>
+            <img src={imgWarningIcon} alt="Warning" style={{width: '40px', height: '40px', flexShrink: 0}} />
             <h2 className="notification-card-title" style={{margin: 0, paddingTop: '8px'}}>Drönarvarning (fred)</h2>
           </div>
 
@@ -73,21 +62,10 @@ function Notification() {
       </div>
 
       {/* Second notification */}
-      <div className="notification-card-overlay" style={{top: '230px'}}>
+      <div className="notification-card-overlay" style={{top: '250px'}}>
         <div className="notification-card">
           <div style={{display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px'}}>
-            <div style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              backgroundColor: '#6750a4',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0
-            }}>
-              <img src={imgWarningIcon} alt="Warning" style={{width: '24px', height: '24px'}} />
-            </div>
+            <img src={imgWarningIcon} alt="Warning" style={{width: '40px', height: '40px', flexShrink: 0}} />
             <h2 className="notification-card-title" style={{margin: 0, paddingTop: '8px'}}>Drönarvarning (krig)</h2>
           </div>
 
