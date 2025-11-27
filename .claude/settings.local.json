@@ -16,7 +16,10 @@
       "Bash(docker rm:*)",
       "Bash(pkill:*)",
       "Bash(cp:*)",
-      "Bash(docker build:*)"
+      "Bash(docker build:*)",
+      "Bash(for url in \"/portal\" \"/dashboard\" \"/report\" \"/social\" \"/notification\" \"/portal/edit/type\" \"/dashboard/map/tuve\")",
+      "Bash(do echo -n \"Testing $url: \")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
