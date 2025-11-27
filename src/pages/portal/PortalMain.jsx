@@ -7,9 +7,9 @@ const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 const imgCheckmark = "/assets/images/e35e5be4-4d65-46ae-88d9-2e3df73bd1b4.svg";
 const imgCloseIcon = "/assets/images/close-icon.svg";
 const imgLocationIcon = "/assets/images/d10973cb-940b-49b2-a778-ddf73cfb6f13.svg";
-const imgCheckboxIcon = "/Assets/check-box.png";
-const imgMessageIcon = "/Assets/Icon new message.png";
-const imgPenIcon = "/Assets/icon pen.png";
+const imgCheckboxIcon = "/assets/images/check-box.png";
+const imgMessageIcon = "/assets/images/Icon new message.png";
+const imgPenIcon = "/assets/images/icon pen.png";
 
 function PortalMain() {
   const navigate = useNavigate();

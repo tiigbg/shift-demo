@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../../App.css';
-import btnQuadcopter from '../../../../Assets/Button quadcopter.png';
-import btnFastvingad from '../../../../Assets/Button Fastvingad.png';
-import btnBalloon from '../../../../Assets/Button Balloon.png';
+const btnQuadcopter = "/assets/images/Button quadcopter.png";
+const btnFastvingad = "/assets/images/Button Fastvingad.png";
+const btnBalloon = "/assets/images/Button Balloon.png";
 
 const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 

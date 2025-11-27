@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
-import mapImage from '../../../Assets/Situation Tuve.png';
+const mapImage = "/assets/images/Situation Tuve.png";
 
 function DashboardMapTuve() {
   const navigate = useNavigate();

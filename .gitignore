@@ -55,3 +55,6 @@ Thumbs.db
 
 # Optional stylelint cache
 .stylelintcache
+
+# Old assets directory (assets now in public/assets/images/)
+Assets/

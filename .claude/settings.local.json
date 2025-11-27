@@ -14,7 +14,9 @@
       "Bash(docker run:*)",
       "Bash(docker stop:*)",
       "Bash(docker rm:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(cp:*)",
+      "Bash(docker build:*)"
     ],
     "deny": [],
     "ask": []

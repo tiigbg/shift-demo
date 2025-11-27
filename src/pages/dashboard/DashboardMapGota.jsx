@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
-import mapImage from '../../../Assets/Situation Gäta Älv.png';
+const mapImage = "/assets/images/Situation Gäta Älv.png";
 
 function DashboardMapGota() {
   const navigate = useNavigate();

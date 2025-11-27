@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
-const imgWarningIcon = "/Assets/icon varning.png";
+const imgWarningIcon = "/assets/images/icon varning.png";
 
 function Notification() {
   const navigate = useNavigate();

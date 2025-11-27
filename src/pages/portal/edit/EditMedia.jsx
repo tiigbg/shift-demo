@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import '../../../App.css';
-import iconPen from '../../../../Assets/icon pen.png';
-import iconCamera from '../../../../Assets/Icon camera.png';
-import iconMic from '../../../../Assets/Icon mic.png';
+const iconPen = "/assets/images/icon pen.png";
+const iconCamera = "/assets/images/Icon camera.png";
+const iconMic = "/assets/images/Icon mic.png";
 
 const imgMenuIcon = "/assets/images/66002c8b-ae2c-49e1-a4bb-43e55f889a06.svg";
 
